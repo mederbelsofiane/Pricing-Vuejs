@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Pricing from '../views/Pricing.vue'
+
 
 Vue.use(VueRouter)
 
@@ -9,6 +11,12 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+    {
+    path: '/pricing',
+    name: 'Pricing',
+    component: Pricing,
+        //() => import(/* webpackChunkName: "pricing" */ '../views/Pricing.vue')
   },
   {
     path: '/about',
@@ -21,7 +29,8 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode:'history'
 })
 
 export default router
